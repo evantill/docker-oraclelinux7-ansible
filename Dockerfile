@@ -1,4 +1,4 @@
-FROM centos:8
+FROM oraclelinux:7
 LABEL maintainer="Jeff Geerling"
 ENV container=docker
 
