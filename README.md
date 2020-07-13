@@ -1,8 +1,8 @@
-# CentOS 8 Ansible Test Image
+# OracleLinux 7 Ansible Test Image
 
-[![Build Status](https://travis-ci.com/geerlingguy/docker-centos8-ansible.svg?branch=master)](https://travis-ci.com/geerlingguy/docker-centos8-ansible) [![Docker Automated build](https://img.shields.io/docker/automated/geerlingguy/docker-centos8-ansible.svg?maxAge=2592000)](https://hub.docker.com/r/geerlingguy/docker-centos8-ansible/)
+[![Build Status](https://travis-ci.com/evantill/docker-oraclelinux7-ansible.svg?branch=testing)](https://travis-ci.com/evantill/docker-oraclelinux7-ansible) [![Docker Automated build](https://img.shields.io/docker/automated/evantill/docker-oraclelinux7-ansible.svg?maxAge=2592000)](https://hub.docker.com/r/evantill/docker-oraclelinux7-ansible/)
 
-CentOS 8 Docker container for Ansible playbook and role testing.
+OracleLinux 7 Docker container for Ansible playbook and role testing.
 
 ## Tags
 
@@ -22,15 +22,15 @@ This image is built on Docker Hub automatically any time the upstream OS contain
 
   1. [Install Docker](https://docs.docker.com/engine/installation/).
   2. `cd` into this directory.
-  3. Run `docker build -t centos8-ansible .`
+  3. Run `docker build -t oraclelinux7-ansible .`
 
 > Note: Switch between `master` and `testing` depending on whether you want the extra testing tools present in the resulting image.
 
 ## How to Use
 
   1. [Install Docker](https://docs.docker.com/engine/installation/).
-  2. Pull this image from Docker Hub: `docker pull geerlingguy/docker-centos8-ansible:latest` (or use the image you built earlier, e.g. `centos8-ansible:latest`).
-  3. Run a container from the image: `docker run --detach --privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro geerlingguy/docker-centos8-ansible:latest` (to test my Ansible roles, I add in a volume mounted from the current working directory with ``--volume=`pwd`:/etc/ansible/roles/role_under_test:ro``).
+  2. Pull this image from Docker Hub: `docker pull evantill/docker-oraclelinux7-ansible:latest` (or use the image you built earlier, e.g. `oraclelinux7-ansible:latest`).
+  3. Run a container from the image: `docker run --detach --privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro evantill/docker-oraclelinux7-ansible:latest` (to test my Ansible roles, I add in a volume mounted from the current working directory with ``--volume=`pwd`:/etc/ansible/roles/role_under_test:ro``).
   4. Use Ansible inside the container:
     a. `docker exec --tty [container_id] env TERM=xterm ansible --version`
     b. `docker exec --tty [container_id] env TERM=xterm ansible-playbook /path/to/ansible/playbook.yml --syntax-check`
@@ -44,3 +44,5 @@ I use Docker to test my Ansible roles and playbooks on multiple OSes using CI to
 ## Author
 
 Created in 2019 by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
+
+Forked in 2020 by Eric Vantillard from [geerlingguy/docker-centos8-ansible](https://github.com/geerlingguy/docker-centos8-ansible).

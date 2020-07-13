@@ -1,4 +1,4 @@
-FROM centos:8
+FROM oraclelinux:7
 LABEL maintainer="Jeff Geerling"
 ENV container=docker
 
@@ -16,7 +16,7 @@ rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 # Install requirements.
-RUN yum makecache --timer \
+RUN yum makecache \
  && yum -y install epel-release initscripts \
  && yum -y update \
  && yum -y install \
